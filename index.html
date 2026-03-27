@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>علشانك ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 60px;
+  font-size: 32px;
+}
+
+#timer {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.heart {
+  position: fixed;
+  color: red;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ FOR YOU ❤️</h1>
+
+<div id="timer">00:00:00</div>
+
+<p>
+أنا بقالي الوقت ده كله بفكر فيكي ❤️  
+وكل ثانية بتعدي بتخليني أحبك أكتر 💕  
+وجودك في حياتي هو أحلى حاجة حصلتلي 💖
+</p>
+
+<script>
+let seconds = 0;
+
+function updateTimer() {
+  seconds++;
+
+  let h = Math.floor(seconds / 3600);
+  let m = Math.floor((seconds % 3600) / 60);
+  let s = seconds % 60;
+
+  document.getElementById("timer").innerText =
+    String(h).padStart(2, '0') + ":" +
+    String(m).padStart(2, '0') + ":" +
+    String(s).padStart(2, '0');
+}
+
+setInterval(updateTimer, 1000);
+
+// قلوب طايرة
+for (let i = 0; i < 40; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
